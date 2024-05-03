@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Lato, Roboto } from "next/font/google";
-import "./global.css";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -19,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[url('../assets/Background-blur.svg')] bg-cover">
+      <body className="bg-ImgBlur bg-cover">
         <div className="flex justify-center h-screen">{children}</div>
       </body>
     </html>

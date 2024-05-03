@@ -9,12 +9,12 @@ import {
   WindIcon,
 } from "lucide-react";
 
-import clouds from "../assets/weather-clouds.svg";
-import rain from "../assets/weather.svg";
-import storm from "../assets/storm.svg";
-import halfSun from "../assets/half-sun.svg";
-import sun from "../assets/Sun.svg";
-import chart from "../assets/Chart.svg";
+import clouds from "../../public/assets/weather-clouds.svg";
+import rain from "../../public/assets/weather.svg";
+import storm from "../../public/assets/storm.svg";
+import halfSun from "../../public/assets/half-sun.svg";
+import sun from "../../public/assets/Sun.svg";
+import chart from "../../public/assets/Chart.svg";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDebounce } from "@/hook/useDebounce";
 
@@ -58,8 +58,9 @@ export default function Main() {
         return response.json();
       })
       .then((dataResponse) => {
-        if (!dataResponse[0].state) return;
-        getUF(dataResponse[0].state);
+        if (dataResponse) {
+          getUF(dataResponse[0]?.state);
+        }
 
         fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${dataResponse[0].lat}&lon=${dataResponse[0].lon}&appid=${process.env.NEXT_PUBLIC_API_KEY}&lang=pt-br`
@@ -191,7 +192,7 @@ export default function Main() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-6">
+        {/* <div className="flex flex-col gap-6">
           <div className="flex gap-6">
             <div className="flex flex-col rounded-md justify-between min-h-60 items-center px-[18px] bg-[#6D67D0]/60 py-4">
               <div className="flex gap-2 mt-4">
@@ -284,7 +285,7 @@ export default function Main() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );
