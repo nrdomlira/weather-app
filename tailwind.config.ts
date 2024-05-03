@@ -12,7 +12,7 @@ const config: Config = {
         sans: "Roboto, sans-serif",
       },
       backgroundImage: {
-        backgroundImg: "url('/src/assets/Background.svg')",
+        backgroundImg: "url('../assets/Background.svg')",
       },
     },
   },

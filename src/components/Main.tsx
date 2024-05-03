@@ -99,7 +99,6 @@ export default function Main() {
     return number / 10;
   }
 
-
   return (
     <main className="flex flex-col space-y-36 px-20 justify-center items-center">
       <div className="px-4 py-2 rounded-md bg-transparent/5">
