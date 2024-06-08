@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@tanstack/react-query": "^5.28.9",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.363.0",

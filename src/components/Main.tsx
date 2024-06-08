@@ -9,12 +9,12 @@ import {
   WindIcon,
 } from "lucide-react";
 
-import clouds from "../../public/assets/weather-clouds.svg";
-import rain from "../../public/assets/weather.svg";
-import storm from "../../public/assets/storm.svg";
-import halfSun from "../../public/assets/half-sun.svg";
-import sun from "../../public/assets/Sun.svg";
-import chart from "../../public/assets/Chart.svg";
+import clouds from "../assets/weather-clouds.svg";
+import rain from "../assets/weather.svg";
+import storm from "../assets/storm.svg";
+import halfSun from "../assets/half-sun.svg";
+import sun from "../assets/Sun.svg";
+import chart from "../assets/Chart.svg";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDebounce } from "@/hook/useDebounce";
 
@@ -112,7 +112,7 @@ export default function Main() {
         />
       </div>
       <div className="flex gap-8">
-        <div className="w-[480px] min-h-[480px] shadow-2xl bg-right-bottom bg-cover bg-[url('../assets/background.svg')] bg-no-repeat flex flex-col justify-between p-3 rounded-lg">
+        <div className="w-[480px] min-h-[480px] shadow-2xl bg-right-bottom bg-cover bg-backgroundImg bg-no-repeat flex flex-col justify-between p-3 rounded-lg">
           {" "}
           <Image
             src={clouds}
