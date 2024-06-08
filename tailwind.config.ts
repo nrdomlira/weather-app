@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss";
-import {} from './public/assets/BackgroundBlur.svg'
-
+import {} from './src/assets/Background.svg'
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,10 +11,10 @@ const config: Config = {
       fontFamily: {
         sans: "Roboto, sans-serif",
       },
-      backgroundImage:{
-        ImgNoBlur:"url('../assets/Background.svg')",
-        ImgBlur:"url('../assets/BackgroundBlur.svg')",
-      }
+      backgroundImage: {
+        'backgroundImg': "url('../assets/Background.png')",
+        'backgroundImgBlur': "url('../assets/BackgroundBlur.png')",
+      },
     },
   },
   plugins: [],

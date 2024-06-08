@@ -18,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-ImgBlur bg-cover">
-        <div className="flex justify-center h-screen">{children}</div>
+      <body className="bg-backgroundImgBlur bg-cover">
+        <div className={`flex justify-center h-screen ${roboto.className}`}>{children}</div>
       </body>
     </html>
   );

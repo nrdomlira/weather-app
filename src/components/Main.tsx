@@ -9,12 +9,12 @@ import {
   WindIcon,
 } from "lucide-react";
 
-import clouds from "../../public/assets/weather-clouds.svg";
-import rain from "../../public/assets/weather.svg";
-import storm from "../../public/assets/storm.svg";
-import halfSun from "../../public/assets/half-sun.svg";
-import sun from "../../public/assets/Sun.svg";
-import chart from "../../public/assets/Chart.svg";
+import clouds from "../assets/weather-clouds.svg";
+import rain from "../assets/weather.svg";
+import storm from "../assets/storm.svg";
+import halfSun from "../assets/half-sun.svg";
+import sun from "../assets/Sun.svg";
+import chart from "../assets/Chart.svg";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDebounce } from "@/hook/useDebounce";
 
@@ -52,7 +52,7 @@ export default function Main() {
 
   useEffect(() => {
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${debounceSearch}&limit=1&appid=${process.env.NEXT_PUBLIC_API_KEY}`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${debounceSearch}&limit=1&appid=${process.env.API_KEY}`
     )
       .then((response) => {
         return response.json();
@@ -63,7 +63,7 @@ export default function Main() {
         }
 
         fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${dataResponse[0].lat}&lon=${dataResponse[0].lon}&appid=${process.env.NEXT_PUBLIC_API_KEY}&lang=pt-br`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${dataResponse[0].lat}&lon=${dataResponse[0].lon}&appid=${process.env.API_KEY}&lang=pt-br`
         )
           .then((response) => {
             return response.json();
@@ -112,7 +112,7 @@ export default function Main() {
         />
       </div>
       <div className="flex gap-8">
-        <div className="w-[480px] min-h-[480px] shadow-2xl bg-right-bottom bg-cover bg-[url('../assets/background.svg')] bg-no-repeat flex flex-col justify-between p-3 rounded-lg">
+        <div className="w-[480px] min-h-[480px] shadow-2xl bg-right-bottom bg-cover bg-backgroundImg bg-no-repeat flex flex-col justify-between p-3 rounded-lg">
           {" "}
           <Image
             src={clouds}
