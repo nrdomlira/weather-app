@@ -52,18 +52,17 @@ export default function Main() {
 
   useEffect(() => {
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${debounceSearch}&limit=1&appid=${process.env.API_KEY}`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${debounceSearch}&limit=1&appid=${process.env.NEXT_PUBLIC_API_KEY}`
     )
       .then((response) => {
         return response.json();
       })
       .then((dataResponse) => {
-        if (dataResponse) {
-          getUF(dataResponse[0]?.state);
-        }
+        if (!dataResponse) return;
+      getUF(dataResponse[0]?.state);
 
         fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${dataResponse[0].lat}&lon=${dataResponse[0].lon}&appid=${process.env.API_KEY}&lang=pt-br`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${dataResponse[0]?.lat}&lon=${dataResponse[0]?.lon}&appid=${process.env.NEXT_PUBLIC_API_KEY}&lang=pt-br`
         )
           .then((response) => {
             return response.json();
